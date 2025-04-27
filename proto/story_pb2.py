@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11proto/story.proto\x12\x05story\",\n\x0cStoryRequest\x12\r\n\x05topic\x18\x01 \x01(\t\x12\r\n\x05theme\x18\x02 \x01(\t\".\n\rStoryResponse\x12\r\n\x05story\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t2J\n\x0cStoryService\x12:\n\rGenerateStory\x12\x13.story.StoryRequest\x1a\x14.story.StoryResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11proto/story.proto\x12\x05story\"<\n\x0cStoryRequest\x12\r\n\x05topic\x18\x01 \x01(\t\x12\r\n\x05theme\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\"N\n\rStoryResponse\x12\r\n\x05story\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\x12\x0e\n\x06trends\x18\x04 \x01(\t2J\n\x0cStoryService\x12:\n\rGenerateStory\x12\x13.story.StoryRequest\x1a\x14.story.StoryResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,9 +32,9 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'proto.story_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
   _globals['_STORYREQUEST']._serialized_start=28
-  _globals['_STORYREQUEST']._serialized_end=72
-  _globals['_STORYRESPONSE']._serialized_start=74
-  _globals['_STORYRESPONSE']._serialized_end=120
-  _globals['_STORYSERVICE']._serialized_start=122
-  _globals['_STORYSERVICE']._serialized_end=196
+  _globals['_STORYREQUEST']._serialized_end=88
+  _globals['_STORYRESPONSE']._serialized_start=90
+  _globals['_STORYRESPONSE']._serialized_end=168
+  _globals['_STORYSERVICE']._serialized_start=170
+  _globals['_STORYSERVICE']._serialized_end=244
 # @@protoc_insertion_point(module_scope)
