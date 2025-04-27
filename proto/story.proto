@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package story;
+
+service StoryService {
+  rpc GenerateStory (StoryRequest) returns (StoryResponse);
+}
+
+message StoryRequest {
+  string topic = 1;
+  string theme = 2;
+}
+
+message StoryResponse {
+  string story = 1;
+  string status = 2;
+}
