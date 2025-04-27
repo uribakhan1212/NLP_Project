@@ -9,9 +9,12 @@ service StoryService {
 message StoryRequest {
   string topic = 1;
   string theme = 2;
+  string region = 3;
 }
 
 message StoryResponse {
   string story = 1;
   string status = 2;
+  string region = 3;
+  string trends = 4;
 }
