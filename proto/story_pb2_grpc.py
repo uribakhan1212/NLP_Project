@@ -35,9 +35,14 @@ class StoryServiceStub(object):
             channel: A grpc.Channel.
         """
         self.GenerateStory = channel.unary_unary(
-                '/story.StoryService/GenerateStory',
+                '/StoryService/GenerateStory',
                 request_serializer=proto_dot_story__pb2.StoryRequest.SerializeToString,
                 response_deserializer=proto_dot_story__pb2.StoryResponse.FromString,
+                _registered_method=True)
+        self.GetTrends = channel.unary_unary(
+                '/StoryService/GetTrends',
+                request_serializer=proto_dot_story__pb2.TrendsRequest.SerializeToString,
+                response_deserializer=proto_dot_story__pb2.TrendsResponse.FromString,
                 _registered_method=True)
 
 
@@ -50,6 +55,13 @@ class StoryServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetTrends(self, request, context):
+        """New RPC method
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_StoryServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -58,11 +70,16 @@ def add_StoryServiceServicer_to_server(servicer, server):
                     request_deserializer=proto_dot_story__pb2.StoryRequest.FromString,
                     response_serializer=proto_dot_story__pb2.StoryResponse.SerializeToString,
             ),
+            'GetTrends': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetTrends,
+                    request_deserializer=proto_dot_story__pb2.TrendsRequest.FromString,
+                    response_serializer=proto_dot_story__pb2.TrendsResponse.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'story.StoryService', rpc_method_handlers)
+            'StoryService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('story.StoryService', rpc_method_handlers)
+    server.add_registered_method_handlers('StoryService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -83,9 +100,36 @@ class StoryService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/story.StoryService/GenerateStory',
+            '/StoryService/GenerateStory',
             proto_dot_story__pb2.StoryRequest.SerializeToString,
             proto_dot_story__pb2.StoryResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetTrends(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/StoryService/GetTrends',
+            proto_dot_story__pb2.TrendsRequest.SerializeToString,
+            proto_dot_story__pb2.TrendsResponse.FromString,
             options,
             channel_credentials,
             insecure,

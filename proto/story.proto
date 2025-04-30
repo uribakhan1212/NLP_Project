@@ -1,20 +1,28 @@
 syntax = "proto3";
 
-package story;
-
 service StoryService {
-  rpc GenerateStory (StoryRequest) returns (StoryResponse);
+    rpc GenerateStory (StoryRequest) returns (StoryResponse);
+    rpc GetTrends (TrendsRequest) returns (TrendsResponse);  // New RPC method
 }
 
 message StoryRequest {
-  string topic = 1;
-  string theme = 2;
-  string region = 3;
+    string region = 1;
+    string theme = 2;
+    string topic = 3;
 }
 
 message StoryResponse {
-  string story = 1;
-  string status = 2;
-  string region = 3;
-  string trends = 4;
+    string story = 1;
+    string region = 2;
+    string trends = 3;
+    string status = 4;
+}
+
+message TrendsRequest {
+    string region = 1;  // Region for which trends are requested
+}
+
+message TrendsResponse {
+    repeated string trends = 1;  // List of trends
+    string status = 2;           // Status of the request
 }

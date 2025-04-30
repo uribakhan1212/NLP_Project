@@ -24,17 +24,21 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11proto/story.proto\x12\x05story\"<\n\x0cStoryRequest\x12\r\n\x05topic\x18\x01 \x01(\t\x12\r\n\x05theme\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\"N\n\rStoryResponse\x12\r\n\x05story\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\x12\x0e\n\x06trends\x18\x04 \x01(\t2J\n\x0cStoryService\x12:\n\rGenerateStory\x12\x13.story.StoryRequest\x1a\x14.story.StoryResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11proto/story.proto\"<\n\x0cStoryRequest\x12\x0e\n\x06region\x18\x01 \x01(\t\x12\r\n\x05theme\x18\x02 \x01(\t\x12\r\n\x05topic\x18\x03 \x01(\t\"N\n\rStoryResponse\x12\r\n\x05story\x18\x01 \x01(\t\x12\x0e\n\x06region\x18\x02 \x01(\t\x12\x0e\n\x06trends\x18\x03 \x01(\t\x12\x0e\n\x06status\x18\x04 \x01(\t\"\x1f\n\rTrendsRequest\x12\x0e\n\x06region\x18\x01 \x01(\t\"0\n\x0eTrendsResponse\x12\x0e\n\x06trends\x18\x01 \x03(\t\x12\x0e\n\x06status\x18\x02 \x01(\t2l\n\x0cStoryService\x12.\n\rGenerateStory\x12\r.StoryRequest\x1a\x0e.StoryResponse\x12,\n\tGetTrends\x12\x0e.TrendsRequest\x1a\x0f.TrendsResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'proto.story_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_STORYREQUEST']._serialized_start=28
-  _globals['_STORYREQUEST']._serialized_end=88
-  _globals['_STORYRESPONSE']._serialized_start=90
-  _globals['_STORYRESPONSE']._serialized_end=168
-  _globals['_STORYSERVICE']._serialized_start=170
-  _globals['_STORYSERVICE']._serialized_end=244
+  _globals['_STORYREQUEST']._serialized_start=21
+  _globals['_STORYREQUEST']._serialized_end=81
+  _globals['_STORYRESPONSE']._serialized_start=83
+  _globals['_STORYRESPONSE']._serialized_end=161
+  _globals['_TRENDSREQUEST']._serialized_start=163
+  _globals['_TRENDSREQUEST']._serialized_end=194
+  _globals['_TRENDSRESPONSE']._serialized_start=196
+  _globals['_TRENDSRESPONSE']._serialized_end=244
+  _globals['_STORYSERVICE']._serialized_start=246
+  _globals['_STORYSERVICE']._serialized_end=354
 # @@protoc_insertion_point(module_scope)
