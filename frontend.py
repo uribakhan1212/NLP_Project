@@ -4,7 +4,7 @@ import proto.story_pb2 as story_pb2
 import proto.story_pb2_grpc as story_pb2_grpc
 
 # gRPC server address
-GRPC_SERVER_ADDRESS = "localhost:50051"
+GRPC_SERVER_ADDRESS = "localhost:50052"
 
 # Dropdown options
 regions = ["PK", "US", "UK"]

@@ -10,7 +10,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True
 )
-
+# token = "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"
 tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-Instruct-v0.2")
 model = AutoModelForCausalLM.from_pretrained(
     "mistralai/Mistral-7B-Instruct-v0.2",
