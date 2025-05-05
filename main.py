@@ -133,7 +133,7 @@ async def serve():
     server = grpc.aio.server()
     story_service = StoryService(region)
     story_pb2_grpc.add_StoryServiceServicer_to_server(story_service, server)
-    server.add_insecure_port('[::]:50051')
+    server.add_insecure_port('[::]:50052')
     await server.start()
     print("gRPC server running on port 50051 🚀")
     await server.wait_for_termination()
