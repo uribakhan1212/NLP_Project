@@ -66,6 +66,7 @@ class StoryService(story_pb2_grpc.StoryServiceServicer):
         """Generate a story based on the selected trend and theme."""
         # Add the request to the queue and wait for the result
         response_future = asyncio.Future()
+        self.selected_trend = request.topic
         await self.request_queue.put((request, response_future))
         try:
             response = await response_future
@@ -85,8 +86,8 @@ class StoryService(story_pb2_grpc.StoryServiceServicer):
             try:
                 # Process the request
                 trending_searches = self.generate_trends()
-                story_text = await self.generate_story(request.trends, request.theme, trending_searches)
-                print(request.trends)
+                print(self.selected_trend)
+                story_text = await self.generate_story(self.selected_trend, request.theme, trending_searches)
                 response = story_pb2.StoryResponse(
                     story=story_text,
                     region=self.region,

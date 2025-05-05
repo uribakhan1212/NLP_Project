@@ -9,6 +9,7 @@ message StoryRequest {
     string region = 1;
     string theme = 2;
     string topic = 3;
+    string trends = 4;
 }
 
 message StoryResponse {

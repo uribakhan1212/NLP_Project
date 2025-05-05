@@ -8,7 +8,7 @@ GRPC_SERVER_ADDRESS = "localhost:50051"
 
 # Dropdown options
 regions = ["PK", "US", "UK"]
-themes = ["Inspirational", "Humorous", "Informative", "Dramatic"]
+themes = ["Inspirational", "Humorous", "Informative", "Dramatic", "Comedy", "Sarcasm", "Satire", "Parody", "Romantic", "Suspense", "Thriller", "Horror", "Adventure", "Fantasy", "Science Fiction", "Historical Fiction", "Cruelty", "Tragedy", "Mystery", "Detective", "Supernatural", "Magical Realism", "Realism", "Surrealism", "Absurdism", "Dystopian", "Utopian", "Cyberpunk", "Steampunk", "Post-Apocalyptic"]
 
 # Streamlit UI
 st.title("Trend Story Generator")
